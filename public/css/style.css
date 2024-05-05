@@ -68,10 +68,7 @@ a {
   justify-content: space-between;
 }
 
-.chat-main {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
+
 
 .chat-sidebar {
   background: #323244;
