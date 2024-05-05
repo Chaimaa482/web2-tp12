@@ -13,12 +13,6 @@ const socket = io();
 // Join chatroom
 socket.emit("joinRoom", { username, room });
 
-// get room and users
-socket.on("roomUsers", ({ room, users }) => {
-  outputRoomName(room);
-  outputUsers(users);
-});
-
 // message from server
 socket.on("message", (message) => {
   // console.log(message);
@@ -55,14 +49,3 @@ function outputMessage(message) {
   document.querySelector(".chat-messages").appendChild(div);
 }
 
-// add room name to DOM
-function outputRoomName(room) {
-  roomName.innerHTML = room;
-}
-
-// add users to DOM
-function outputUsers(users) {
-  userList.innerHTML = `
-      ${users.map((user) => `<li>${user.username}</li>`).join("")}
-   `;
-}
